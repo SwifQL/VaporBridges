@@ -16,3 +16,6 @@ extension Application: BridgesApplication {
     }
 }
 
+extension Request: BridgesRequest {
+    public var bridgesApplication: BridgesApplication { application }
+}
