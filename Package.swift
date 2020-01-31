@@ -35,7 +35,7 @@ deps.append("https://github.com/vapor/vapor.git", from: "4.0.0-beta.2", targets:
 if localDev {
     deps.appendLocal("Bridges", targets: "Bridges")
 } else {
-    deps.append("https://github.com/SwifQL/Bridges.git", from: "1.0.0-beta.1", targets: "Bridges")
+    deps.append("https://github.com/SwifQL/Bridges.git", from: "1.0.0-beta.2", targets: "Bridges")
 }
 
 // MARK: - Package
