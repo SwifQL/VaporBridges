@@ -30,7 +30,7 @@ extension Array where Element == Dep {
 
 var deps: [Dep] = []
 
-deps.append("https://github.com/vapor/vapor.git", from: "4.0.0-beta.2", targets: "Vapor")
+deps.append("https://github.com/vapor/vapor.git", from: "4.0.0-beta", targets: "Vapor")
 
 if localDev {
     deps.appendLocal("Bridges", targets: "Bridges")
