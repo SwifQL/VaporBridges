@@ -30,12 +30,12 @@ extension Array where Element == Dep {
 
 var deps: [Dep] = []
 
-deps.append("https://github.com/vapor/vapor.git", from: "4.0.0-rc", targets: "Vapor")
+deps.append("https://github.com/vapor/vapor.git", from: "4.0.0-rc", targets: .product(name: "Vapor", package: "vapor"))
 
 if localDev {
-    deps.appendLocal("Bridges", targets: "Bridges")
+    deps.appendLocal("Bridges", targets: .product(name: "Bridges", package: "Bridges"))
 } else {
-    deps.append("https://github.com/SwifQL/Bridges.git", from: "1.0.0-beta.2", targets: "Bridges")
+    deps.append("https://github.com/SwifQL/Bridges.git", from: "1.0.0-beta.2", targets: .product(name: "Bridges", package: "Bridges"))
 }
 
 // MARK: - Package
@@ -46,11 +46,11 @@ let package = Package(
        .macOS(.v10_15)
     ],
     products: [
-        .library(name: "VaporBridges", targets: ["VaporBridges"]),
+        .library(name: "VaporBridges", targets: [.target(name: "VaporBridges")]),
     ],
     dependencies: deps.map { $0.package },
     targets: [
         .target(name: "VaporBridges", dependencies: deps.flatMap { $0.targets }),
-        .testTarget(name: "VaporBridgesTests", dependencies: ["VaporBridges"]),
+        .testTarget(name: "VaporBridgesTests", dependencies: [.target(name: "VaporBridges")]),
     ]
 )
