@@ -46,7 +46,7 @@ let package = Package(
        .macOS(.v10_15)
     ],
     products: [
-        .library(name: "VaporBridges", targets: [.target(name: "VaporBridges")]),
+        .library(name: "VaporBridges", targets: ["VaporBridges"]),
     ],
     dependencies: deps.map { $0.package },
     targets: [
