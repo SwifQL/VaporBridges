@@ -35,7 +35,7 @@ deps.append("https://github.com/vapor/vapor.git", from: "4.0.0-rc", targets: .pr
 if localDev {
     deps.appendLocal("Bridges", targets: .product(name: "Bridges", package: "Bridges"))
 } else {
-    deps.append("https://github.com/SwifQL/Bridges.git", from: "1.0.0-beta.2", targets: .product(name: "Bridges", package: "Bridges"))
+    deps.append("https://github.com/SwifQL/Bridges.git", from: "1.0.0-rc", targets: .product(name: "Bridges", package: "Bridges"))
 }
 
 // MARK: - Package
