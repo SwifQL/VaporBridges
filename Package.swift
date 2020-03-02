@@ -30,7 +30,7 @@ extension Array where Element == Dep {
 
 var deps: [Dep] = []
 
-deps.append("https://github.com/vapor/vapor.git", from: "4.0.0-beta", targets: "Vapor")
+deps.append("https://github.com/vapor/vapor.git", from: "4.0.0-rc", targets: "Vapor")
 
 if localDev {
     deps.appendLocal("Bridges", targets: "Bridges")
@@ -43,7 +43,7 @@ if localDev {
 let package = Package(
     name: "VaporBridges",
     platforms: [
-       .macOS(.v10_14)
+       .macOS(.v10_15)
     ],
     products: [
         .library(name: "VaporBridges", targets: ["VaporBridges"]),
